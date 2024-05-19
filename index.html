@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </head>
+
+  <body class="show-cart">
+    <header>      
+      <div class="nav">
+        <a href="#" class="logo">WELLZEN</a>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li class="active"><a href="index.html">Shop</a></li>
+          <li><a href="">User Profile</a></li>
+          <li><a href="">Gallery</a></li>
+          <li><a href="">Feedback</a></li>
+          <li><a href="">About Us</a></li>
+       </ul>
+        <div class="cart-container">
+          <button id="cartBtn">
+            <i class="fa" style="font-size: 24px">
+              <ion-icon name="cart" id="cart-icon"></ion-icon></i>
+          </button>
+          <span class="cart-count" id="lblCartCount">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- cart tab -->
+    <div id="cart-tab" class="cart-tab">
+      <div class="cart--header">
+        <h1>Shopping Cart</h1>
+        <button id="closeCartBtn">&times;</button>
+      </div>
+      <div class="list-cart">
+        <div class="cart-item">
+          <div class="cart-item-img">
+            <img src="images/product1.jpg" alt="">
+          </div>
+          <div class="cart-item-name"></div>
+          <div class="size"></div>
+          <div class="total-price"></div>
+          <div class="quantity">
+            <span class="minus" id="minus" >&lt;</span>
+            <span class="qty" id="qty">1</span>
+            <span class="plus" id="plus" >&gt;</span>
+          </div>
+          <div class="bin" ><ion-icon name="trash-bin-outline" id="del-item" ></ion-icon></div>
+        </div>
+      </div>
+      <div class="total-price">
+        <span class="tot">Total:</span>
+        <span class="price">Rs.0</span>
+      </div>
+      <div class="btn">
+        <button class="emptybtn" id="emptybtn">Empty Cart</button>
+        <button class="checkoutbtn" id="checkoutbtn">Checkout</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <section>
+        <!-- Product showcase section -->
+        <h1 class="title">Our Products</h1>
+        <div class="item-grid" id="item-grid">
+          <div class="item-box" data-description-id="1" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product1.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-1">Metabolism+</h2>
+            <div class="item-description" id="item-description-1">Supports the metabolism of nutrients</div>
+            <div class="item-price" id="item-price-1">Rs.7000</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="2" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product2.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-2">Fish Oil</h2>
+            <div class="item-description" id="item-description-2">Supports heart, brain, skin, eye & joint health</div>
+            <div class="item-price" id="item-price-2">Rs.4750</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="3" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product3.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-3">High Protein</h2>
+            <div class="item-description" id="item-description-3">Supports the Recovery & Growth of Muscle.</div>
+            <div class="item-price" id="item-price-3">Rs.5000</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="4" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product4.png" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-4">Vitamin B12</h2>
+            <div class="item-description" id="item-description-4">GNC's Vitamin B-12</div>
+            <div class="item-price" id="item-price-4">Rs.7750</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="5" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product5.png" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-5">Vidaslim</h2>
+            <div class="item-description" id="item-description-5">Dietary Fiber, Green Tea Extract, L-Carnitine</div>
+            <div class="item-price" id="item-price-5">Rs.6750</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="6" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product6.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-6">Lip Balm</h2>
+            <div class="item-description" id="item-description-6">Moisturizing Lip Balm Hydrating Lips</div>
+            <div class="item-price" id="item-price-6">Rs.350</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="7" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product7.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-7">Mousturizer</h2>
+            <div class="item-description" id="item-description-7"> Improves skin hydration and increases water content</div>
+            <div class="item-price" id="item-price-7">Rs.3200</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="8" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product8.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-8">Bio Oil</h2>
+            <div class="item-description" id="item-description-8">Improve the appearance of new and old scars</div>
+            <div class="item-price" id="item-price-8">Rs.4950</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="9" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product9.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-9">Samahan</h2>
+            <div class="item-description" id="item-description-9">Provides effective and quick relief</div>
+            <div class="item-price" id="item-price-9">Rs.1650</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>
+          <div class="item-box" data-description-id="10" onclick="toggleItemDescription(event)">
+            <div class="pic"><img src="images/product10.jpg" alt="sp2" class="item-img"></div>
+            <h2 class="item-title" id="item-name-10">Tri Sleep</h2>
+            <div class="item-description" id="item-description-10">Supports your natural sleep cycle</div>
+            <div class="item-price" id="item-price-10">Rs.11000</div>
+            <div class="add-cart">
+              <input type="button" id="openModalBtn" value="Preview">
+            </div>
+          </div>          
+        </div>         
+        <!-- Add a single modal structure -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="closeBtnCol">              
+              <div class="header">
+                <div class="title">Product Details</div>
+              </div>
+              <div class="close">
+                <span class="close-icon">&times;</span>
+              </div>
+            </div>
+            <div class="row2col1">
+              <div class="col--1">
+                <img class="modal--image" src="images/product1.jpg" alt="Product Image" id="modal-product-image">
+              </div>
+              <div class="col--2">
+                <div class="modal--body">
+                  <div class="item2">
+                    <span id="modal-product-name">Product Name</span>
+                    <p id="modal-product-description">Lorem ipsum dolor sit amet consectetur</p>
+                    <span id="modal-product-price">Rs.4750</span>
+                    <h2>Select Options</h2> 
+                    <div class="product-option">
+                      <label for="modal-product-size-1">Size:</label>                    
+                      <select id="modal-product-size-1" name="size" onchange="updatePrice()">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                      </select>
+                    </div>                 
+                    <div class="product-option">
+                      <label for="modal-product-quantity-1">Quantity:</label>
+                      <input
+                        type="number"
+                        id="modal-product-quantity-1"
+                        name="quantity"
+                        min="1"
+                        value="1"
+                      />
+                    </div>
+
+                    <div class="product-option">
+                      <button class="submit" id="add-to-cart-modal-1">Add to Cart</button>
+                    </div>
+                  </div>
+                  <div class="item3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>  
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content">
+        <h2>Checkout</h2>
+        
+        <form name="paymentForm" class="payment">
+            <div class="row">
+                <div class="col">
+                    <h3 class="checkout-title" id="billing">billing address</h3>
+
+                    <div class="inputBox">
+                        <label for="fullName">Full Name:</label>
+                        <input pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text" placeholder="Enter your full name" id="fullName" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="email">Eamil:</label>
+                        <input type="email" placeholder="Email address" id="email" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="address">Address:</label>
+                        <input type="text" placeholder="No.1, Baudhaloka Mawatha" id="address" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="city">City:</label>
+                        <input type="text" placeholder="Bambalapitiya" id="city" required>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="district">District:</label>
+                            <input type="text" placeholder="Colombo" id="district" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="postCode">Postal Code:</label>
+                            <input type="text" placeholder="00000" id="postCode">
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="checkout-title">payment</h3>
+
+                    <div class="inputBox">
+                        <label for="cards">Accepted Cards:</label>
+                        <img src="images/card.png" alt="card options" id="cards">
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardName">Name on card:</label>
+                        <input type="text" placeholder="Your Name" id="cardName" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardNo">Card Number:</label>
+                        <input type="text" placeholder="0000 0000 0000 0000" id="cardNo" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="expMonth">Exp Month:</label>
+                        <input type="text" placeholder="Month" id="expMonth" required>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="expYear">Exp Year:</label>
+                            <input type="text" placeholder="yyyy" id="expYear" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" placeholder="000" id="cvv" required>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </form>
+        <div class="checkoutLayout">
+          <div class="returnCart">           
+              <h2>Order Summary</h2>
+              <div class="checkout-list">
+                  <div class="checkout-item" id="checkout-item">
+                      <img src="images/product1.jpg" alt="Product Image">
+                      <div class="info">
+                          <div class="checkout-name">Product 1</div>
+                          <div class="size">size</div>                        
+                      </div>
+                      <div class="checkout-quantity">1</div>
+                      <div class="returnPrice">Rs.0</div>
+                  </div>
+                  
+              </div>
+          </div>
+          <div class="return">
+              <div class="row">
+                  <div>Total Items:</div>
+                  <div class="totalQuantity">60</div>
+              </div>
+              <div class="row">
+                  <div>Total Price:</div>
+                  <div class="totalPrice">Rs.0</div>
+              </div>
+          </div>
+      </div>
+      <div class="checkout-btn">
+        <button class="return-cart" id="return-cart">Back to Cart</button>
+        <button class="proceed" id="proceed">Proceed</button>
+      </div>    
+      </div>      
+  </div>
+  <div class="order-complete">
+    <div class="order-box">
+      <h2 class="order-title">Order Complete</h2>
+      <div class="order-complete-animation">
+        <div class="checkmark"></div>
+        <div class="circle"></div>
+      </div>
+          
+      <span class="order-message">Thank you for ordering.</span>
+      <span class="order-message">Your order number is</span>
+      <span id="orderNumber"> 1111111</span>
+      <button class="shop-more" id="shopMore">Shop More</button>
+    </div>   
+  </div>
+    <footer>
+      <p>&copy; 2024 WELLZEN</p>
+    </footer>
+
+    <script src="js/script.js">
+    </script>
+  </body>
+</html>
