@@ -2,12 +2,13 @@
 A simple shop page
 
 The shop page should include the following elements:
-  •	Product showcase
-  •	Product options
-  •	Product selection
-  •	Order summary (basket)
-  •	Checkout summary
-  •	Checkout system feedback
+
+  •	Product showcase  
+  •	Product options  
+  •	Product selection  
+  •	Order summary (basket)  
+  •	Checkout summary  
+  •	Checkout system feedback  
 
 The product showcase features a well-organized layout, showcasing product images, titles, descriptions, and prices where users can browse, and purchase products.
 The design ensures a smooth and intuitive shopping experience, with clear navigation and visually appealing product display.
